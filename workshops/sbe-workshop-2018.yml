@@ -1,0 +1,16 @@
+---
+id:"sbe-workshop-2018"
+name: "Snowball Edge Workshop"
+workshop_title: "AWS Snowball Edge and AWS Greengrass for Fun and Profit"
+revision: reinvent-2018
+logo: "aws-smile.png"
+enable_issue_submission: false
+repo_url: https://github.com/aws-samples/aws-edge-compute-workshop
+vars:
+  WORKSHOP_VERSION: v1.0
+modules:
+  activate:
+  - "modules_getting_started"
+  - "modules_create_ami"
+  - "modules_sumerian"
+

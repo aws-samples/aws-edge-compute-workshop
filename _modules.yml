@@ -1,0 +1,10 @@
+config:
+    renderer: markdown
+
+modules:
+  modules_getting_started:
+    name: 01_Getting_Started
+  modules_ami_creation:
+    name: 02_AMI_Creation
+  modules_sumerian:
+    name: 03_Sumerian
