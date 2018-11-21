@@ -4,7 +4,21 @@ config:
 modules:
   modules_getting_started:
     name: 01_Getting_Started
-  modules_ami_creation:
-    name: 02_AMI_Creation
+  modules_ec2_creation:
+    name: 02_EC2_Creation
+  modules_greengrass:
+    name: 03_Greengrass
+  modules_folders:
+    name: 04_Folders
+  modules_openpose:
+    name: 05_OpenPose
+  modules_permissions:
+    name: 06_Permissions
+  modules_lambdas:
+    name: 07_Lambdas
+  modules_greengrass_deployment:
+    name: 08_Greengrass_Deployment
   modules_sumerian:
-    name: 03_Sumerian
+    name: 09_Sumerian
+  modules_beyond_the_workshop:
+    name: 10_beyond_the_workshop
