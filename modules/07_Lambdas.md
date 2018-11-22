@@ -162,3 +162,18 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 	![110_29](../images/110_29.png)
 	![110_30](../images/110_30.png)	
 
+## Explanation of different SDKs being used
+
+**AWS SDKs**
+
+Using the AWS SDKs, you can build applications that work with any AWS service, including Amazon S3, Amazon DynamoDB, AWS IoT, AWS IoT Greengrass, and more. In the context of AWS IoT Greengrass, you can use the AWS SDK in deployed Lambda functions to make direct calls to any AWS service. For more information, see SDKs for Greengrass Lambda Functions.
+
+**AWS IoT Device SDKs**
+
+The AWS IoT Device SDKs helps devices connect to AWS IoT or AWS IoT Greengrass services. Devices must know which AWS Greengrass group they belong to and the IP address of the AWS Greengrass core that they should connect to.
+
+Although you can use any of the AWS IoT Device SDKs to connect to an AWS Greengrass core, only the C++ and Python Device SDKs provide AWS IoT Greengrass-specific functionality, such as access to the AWS IoT Greengrass Discovery Service and AWS Greengrass core root CA downloads. For more information, see AWS IoT Device SDK.
+
+**AWS IoT Greengrass Core SDK**
+
+The AWS IoT Greengrass Core SDK enables Lambda functions to interact with the AWS Greengrass core on which they run in order to publish messages, interact with the local Device Shadow service, or invoke other deployed Lambda functions. This SDK is used exclusively for writing Lambda functions running in the Lambda runtime on an AWS Greengrass core. For more information, see SDKs for Greengrass Lambda Functions.
