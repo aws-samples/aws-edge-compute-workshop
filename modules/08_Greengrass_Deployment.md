@@ -223,3 +223,7 @@ Now that we have prepared all the code, and configuraiton settings for our *Gree
 1. You can now switch back to the tab to the **IoT Core** console and confirm that you see at least one message on each topic for the file you have uploaded.
 
 	![111_60](../images/111_60.png)
+
+## Bulk deployment reference
+
+[Create Bulk Deployments For Groups](https://docs.aws.amazon.com/greengrass/latest/developerguide/bulk-deploy-cli.html)
