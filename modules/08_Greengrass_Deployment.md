@@ -224,6 +224,7 @@ Now that we have prepared all the code, and configuraiton settings for our *Gree
 
 	![111_60](../images/111_60.png)
 
-## Bulk deployment reference
+## Greengrass deployment references
 
-[Create Bulk Deployments For Groups](https://docs.aws.amazon.com/greengrass/latest/developerguide/bulk-deploy-cli.html)
+* [Deploy Cloud Configurations to an AWS IoT Greengrass Core Device](https://docs.aws.amazon.com/greengrass/latest/developerguide/configs-core.html)
+* [Create Bulk Deployments For Groups](https://docs.aws.amazon.com/greengrass/latest/developerguide/bulk-deploy-cli.html)
