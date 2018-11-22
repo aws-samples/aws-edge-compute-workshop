@@ -58,7 +58,7 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 	fs.protected_symlinks = 1
 	```
 
-	`CTRL+O` to save, then `CTRL+X` to exit the editor
+	`CTRL+O` to save, then `CTRL+X` to exit the editor <mark>if we use cloud9, add how to send ctrl commands</mark>
 	
 1. We can now reboot the EC2 instance to pick-up the configuration changes.
 
@@ -357,17 +357,17 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 	   	------------------------------------Results-----------------------------------------
 	   	Note:
 	   	1. It looks like the kernel uses 'systemd' as the init process. Be sure to set the
-	   	'useSystemd' field in the file 'config.json' to 'yes' when configuring Greengrass core.
-	   	
+	      	'useSystemd' field in the file 'config.json' to 'yes' when configuring Greengrass core.
+	
 	   	Missing optional dependencies:
 	   	1. Could not find the binary 'nodejs6.10'.
-	   	
+	
 	   	If NodeJS 6.10 or later is installed on the device, name the binary 'nodejs6.10' and
 	   	add its parent directory to the PATH environment variable. NodeJS 6.10 or later is
 	   	required to execute NodeJS lambdas on Greengrass core.
 	   	
 	   	2. Could not find the binary 'java8'.
-	   	
+	
 	   	If Java 8 or later is installed on the device name the binary 'java8' and add its
 	   	parent directory to the PATH environment variable. Java 8 or later is required to
 	   	execute Java lambdas on Greengrass core.

@@ -13,6 +13,9 @@ To get started you will first login to the Workshop. The workshop will create an
 
 1. Use your **email address** and your **unique token** to login to the Workshop
 
+1. Once you are logged in, please move on to module 02
+
+
 `Note: You should have received a piece of paper with a hash token on it. If not, please request one from one of the lab assistants.`
 
 
