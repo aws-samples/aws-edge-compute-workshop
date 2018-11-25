@@ -37,7 +37,8 @@ In order to build our workflow we need a couple of *Lambda* functions that act a
 	![110_12](../images/110_12.png)
 	![110_13](../images/110_13.png)
 
-<mark>_***@TODO***_ Is this needed to include the Greengrass SDK or is it covered by using the below instructions?</mark>
+	* Download link for Greengrass SDK for Python:
+	[greengrass-core-python-sdk-1.2.0.tar.gz](https://d1onfpft10uf5o.cloudfront.net/greengrass-sdk/downloads/python/2.7/greengrass-core-python-sdk-1.2.0.tar.gz)
 
 `tar -zxvf ./greengrass-core-python-sdk-1.2.0.tar.gz`
 
@@ -50,8 +51,6 @@ In order to build our workflow we need a couple of *Lambda* functions that act a
 We can speed up the developement of our Lambda function by using the *Cloud9* hosted IDE environments. The *Cloud9* environment provides a convenient way to synchronize the defined Lambda functions between the cloud and the IDE.
 
 #### Setup *Cloud9* environment
-
-<mark>_***@TODO***_ confirm whether this step is already be complete in the Event Engine environment</mark>
 
 1. In your browser in the *AWS* console, change to *Cloud9* and select to create a **Create environment**.
 
@@ -72,9 +71,7 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 	![110_4](../images/110_4.png)
 
 #### Populating the code for the *Lambda* functions
-
-<mark>_***@TODO***_ add a section with the function code for the two Lambdas **OR** instructions of using the pre-packaged ZIP files with the C9 environment</mark>
-
+	
 ##### S3 Lambda
 
 1. In order to start populating the code for our Lambda functions select the **AWS resources** tab on the right edge of the IDE, expand the **Remote Functions** section and you should see the two Lambda functions we created in [section 1.9](#1.9).
@@ -96,9 +93,75 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 	
 4. You can now populate the source code for the function in the IDE.
 
-	<mark>_***@TODO***_ How do we share the soruce code? ZIP file, git repo or text file? Could be part of the markdown (copy/paste).</mark>
-
 	![110_9](../images/110_9.png)
+	
+	* `SBE-Workshop-S3-Watcher` code:
+
+	```
+		#
+		# Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+		#
+		import json
+		import boto3
+		import botocore
+		import greengrasssdk
+		
+		print('Loading SBE-Workshop-Greengrass-3 function')
+		
+		s3_client = boto3.resource('s3')
+		iot_data = greengrasssdk.client('iot-data')
+		
+		volume_path = '/tmp/dst/'
+		
+		topic = 'sbeworkshop/s3complete'
+		qos = 1
+		payload = {}
+		
+		def dload_complete(file_size):
+		    # print(bytes_transferred)
+		    payload['status'] = 'complete'
+		
+		    iot_response = iot_data.publish(
+		        topic=topic,
+		        qos=qos,
+		        payload=json.dumps(payload)
+		    )
+		    
+		    print(iot_response)
+		
+		def lambda_handler(event, context):
+		    print('S3 Bucket: ' + event['bucket'])
+		    print('S3 Key: ' + event['key'])
+		    print('S3 ContentType: ' + event['content-type'])
+		    
+		    files = [event['key']]
+		    bucket = event['bucket']
+		
+		    for file in files:
+		        file_object = s3_client.Object(bucket, file)
+		        
+		        remote_file = bucket + '/' + file
+		        local_file = volume_path + file
+		        file_size = file_object.content_length
+		
+		        payload['remote-file'] = remote_file
+		        payload['local-file'] = local_file
+		        payload['file-size'] = file_size
+		        payload['status'] = 'started'
+		
+		        try:
+		            # s3_client.Bucket(bucket).download_file(file, local_file, Callback=dload_complete(file_size))
+		            file_object.download_file(local_file, Callback=dload_complete(file_size))
+		            
+		        except botocore.exceptions.ClientError as e:
+		            if e.response['Error']['Code'] == "404":
+		                print("The object does not exist.")
+		            else:
+		                raise
+		    
+		    return
+
+	```
 	
 5. Now, while having the **Local function** selected, press the upward poiting arrow in order to update the Lambda function in the cloud.
 
@@ -116,22 +179,69 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 
 2. Populate the code for the `SBE-Workshop-Greengrass` function in the *Cloud9* environment.
 
-	<mark>_***@TODO***_ How do we share the soruce code? ZIP file, git repo or text file? Could be part of the markdown (copy/paste).</mark>
-
 	![110_18](../images/110_18.png)
+
+	* `SBE-Workshop-Greengrass` code:
+
+	```
+		#
+		# Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+		#
+		import json
+		import urllib
+		import boto3
+		
+		print('Loading SBE-Workshop-S3-Watcher function')
+		
+		s3 = boto3.client('s3')
+		iot_data = boto3.client('iot-data')
+		
+		topic = 'sbeworkshop/s3event'
+		qos = 1
+		payload = {}
+		
+		# Lambda entry point
+		def lambda_handler(event, context):
+		    bucket = event['Records'][0]['s3']['bucket']['name']
+		    key = urllib.unquote_plus(event['Records'][0]['s3']['object']['key'].encode('utf8'))
+		
+		    try:
+		        s3_response = s3.get_object(Bucket=bucket, Key=key)
+		
+		        payload["bucket"] = bucket
+		        payload["key"] = key
+		        payload["content-type"] = s3_response['ContentType']
+		
+		        iot_response = iot_data.publish(
+		            topic=topic,
+		            qos=qos,
+		            payload=json.dumps(payload)
+		        )
+		        
+		        print(iot_response)
+		
+		    except Exception as e:
+		        print(e)
+		        print('Error getting object {} from bucket {}.'.format(key, bucket))
+		        raise e
+		
+		    return
+	```
+
 
 3. Using the command line terminal at the bottom of the *Cloud9* environment issue the following commands:
 	1. `cd SBE-Workshop-Greengrass` to change into the subfolder of the *Greengrass* Lambda function
 	2. `pip install boto3 -t .` to install the `boto3` framework and make it available on *Greengrass* for the Lambda function	
+
 	![110_19](../images/110_19.png)
 
-4. With the **SBE-Workshop_Greengrass** folder selected in the lefthand navigation panel, use the **File** drop-down menu, select the **Upload Local File**
+4. Download the *Greengrass* SDK from here: [greengrass-core-python-sdk-1.2.0.tar.gz](https://d1onfpft10uf5o.cloudfront.net/greengrass-sdk/downloads/python/2.7/greengrass-core-python-sdk-1.2.0.tar.gz)
+
+4. With the **SBE-Workshop_Greengrass** foldeßr selected in the lefthand navigation panel, use the **File** drop-down menu, select the **Upload Local File**
 
 	![110_20](../images/110_20.png)
 	![110_21](../images/110_21.png)
 	![110_22](../images/110_22.png)
-	
-	<mark>_***@TODO***_ How do we make the greengrasssdk available? Ideally instructions on how to download it. Can we include a direct link? Don't think direct link is possible because you need to be logged into the console for it but here is a link to the page [Greengrass SDKs](https://us-west-2.console.aws.amazon.com/iotv2/home?region=us-west-2#/software/greengrass/sdk)</mark>
 
 5. Unpack the uploaded archive file in the `SBE-Workshop-Greengrass` directory using the commands:
 	1. `tar -zxvf ./greengrass-core-python-sdk-1.2.0.tar.gz` to extract the SDK archive.

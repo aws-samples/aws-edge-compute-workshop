@@ -2,7 +2,7 @@
 
 ## 1. Greengrass Deployment
 
-We have *Greengrass* installed and configured and have created Lmabda function which is supposed to run on the *Greengrass* installation. In order to move any functionality to *Greengrass* we need to create a deployment package which can be pushed down to the device. With a deployment package that gets successfully applied our *Greengrass* installation essentially would remain without any functionality.
+We have *Greengrass* installed and configured and have created Lambda function which is supposed to run on the *Greengrass* installation. In order to move any functionality to *Greengrass* we need to create a deployment package which can be pushed down to the device. With a deployment package that gets successfully applied our *Greengrass* installation essentially would remain without any functionality.
 
 ### 1.1 Prepare Greengrass deployment
 
@@ -28,7 +28,7 @@ A local resource on *Greengrass* can be a locally connected device, e.g. a camer
 
 	![111_4](../images/111_4.png)
 	
-3. We will affiliate the resource to the Lmabda funciton in a later step so we can ignore that setting for the moment and hit the **Save** button.
+3. We will affiliate the resource to the Lambda function in a later step so we can ignore that setting for the moment and hit the **Save** button.
 
 	![111_5](../images/111_5.png)
 
@@ -103,7 +103,7 @@ In this part we are identifying the *Lambda* function on the cloud which should 
 	
 #### Setting up Subscriptions
 
-Subscriptions are a mechanism that *Greengrass* uses to ensure only allowed MQTT messages are flowing through the local broker. Here we are mapping incoming `MQTT` messages to the Lambda functions repsonsible for processing the messages. We also need to define which Lambda functions are aloowed to communicate via `MQTT` with the *AWS IoT Core* service or with other local Lambda functions or locally connected devices.
+Subscriptions are a mechanism that *Greengrass* uses to ensure only allowed MQTT messages are flowing through the local broker. Here we are mapping incoming `MQTT` messages to the Lambda functions responsible for processing the messages. We also need to define which Lambda functions are allowed to communicate via `MQTT` with the *AWS IoT Core* service or with other local Lambda functions or locally connected devices.
 
 1. Now in order for `MQTT` communication to work to and from *Greengrass* we need to setup the necessary Subscriptions, select **Subscriptions** from the Greengrass group configuration and select **Add your first subscription**.
 
@@ -150,7 +150,7 @@ The service role we previously created for *Greengrass* needs to be assigned to 
 
 ##### Greengrass logging configuration
 
-In order to aloow for debugging of Lambda functions as well as ensure correct operation of *Greengrass* itself we need to be able to collect and analyse log files. For *Greengrass* to collect those locally or push them to *CloudWatch* we need to use to the loggign configuration section in the settings.
+In order to allow for debugging of Lambda functions as well as ensure correct operation of *Greengrass* itself we need to be able to collect and analyse log files. For *Greengrass* to collect those locally or push them to *CloudWatch* we need to use to the logging configuration section in the settings.
 
 1. Still on the **Settings** screen, scroll down to the **CloudWatch logs configuration** and the **Local logs configuration**, select the **Edit** link of the **Local logs configuration**.
 
@@ -183,7 +183,7 @@ Now that we have prepared all the code, and configuraiton settings for our *Gree
 
 	![111_44](../images/111_44.png)
 
-1. The very frist time you are initiating a deployment you will get prompted how connectivity information is managed for devices local to the *Greengrass* device, select **Automatic detection**.
+1. The very first time you are initiating a deployment you will get prompted how connectivity information is managed for devices local to the *Greengrass* device, select **Automatic detection**.
 
 	![111_46](../images/111_46.png)
 
@@ -202,7 +202,7 @@ Now that we have prepared all the code, and configuraiton settings for our *Gree
 
 ### Testing the deployment	
 
-1. In order to test the *Greengrass* deployment, switch back to the *IoT Core* console in your browser and sleect the **Test** option on the lefthand side, here you can subscribe to the topic `sbeworkshop/#` to monitor all MQTT messages, leave this page open in a dedicated tab.
+1. In order to test the *Greengrass* deployment, switch back to the *IoT Core* console in your browser and select the **Test** option on the lefthand side, here you can subscribe to the topic `sbeworkshop/#` to monitor all MQTT messages, leave this page open in a dedicated tab.
 
 	![111_52](../images/111_52.png)
 	

@@ -2,7 +2,6 @@
 
 ## Greengrass installation
 
-<a name="1.1"></a>
 ## 1.1 Preparing for the Greengrass Installation
 
 In this section we are preparing the *EC2* instance to be able to run *Greengrass* on it.
@@ -58,7 +57,7 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 	fs.protected_symlinks = 1
 	```
 
-	`CTRL+O` to save, then `CTRL+X` to exit the editor <mark>if we use cloud9, add how to send ctrl commands</mark>
+	`CTRL+O` to save, then `CTRL+X` to exit the editor.
 	
 1. We can now reboot the EC2 instance to pick-up the configuration changes.
 
@@ -284,129 +283,136 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 
 	<details>
    		<summary>Command: `sudo ./check_ggc_dependencies`</summary>
-
-	   	Output:
-	   	
-	   	==========================Checking script dependencies==============================
-	   	The device has all commands required for the script to run.
-	   	
-	   	========================Dependency check report for GGC v1.6=========================
-	   	System configuration:
-	   	Kernel architecture: x86_64
-	   	Init process: /lib/systemd/systemd
-	   	Kernel version: 4.4
-	   	C library: Ubuntu GLIBC 2.23-0ubuntu10
-	   	C library version: 2.23
-	   	Directory /var/run: Present
-	   	/dev/stdin: Found
-	   	/dev/stdout: Found
-	   	/dev/stderr: Found
-	   	
-	   	--------------------------------Kernel configuration--------------------------------
-	   	Kernel config file: /boot/config-4.4.0-1067-aws
-	   	
-	   	Namespace configs:
-	   	CONFIG_IPC_NS: Enabled
-	   	CONFIG_UTS_NS: Enabled
-	   	CONFIG_USER_NS: Enabled
-	   	CONFIG_PID_NS: Enabled
-	   	
-	   	Cgroup configs:
-	   	CONFIG_CGROUP_DEVICE: Enabled
-	   	CONFIG_CGROUPS: Enabled
-	   	CONFIG_MEMCG: Enabled
-	   	
-	   	Other required configs:
-	   	CONFIG_POSIX_MQUEUE: Enabled
-	   	CONFIG_OVERLAY_FS: Enabled
-	   	CONFIG_HAVE_ARCH_SECCOMP_FILTER: Enabled
-	   	CONFIG_SECCOMP_FILTER: Enabled
-	   	CONFIG_KEYS: Enabled
-	   	CONFIG_SECCOMP: Enabled
-	   	
-	   	------------------------------------Cgroups check-----------------------------------
-	   	Cgroups mount directory: /sys/fs/cgroup
-	   	
-	   	Devices cgroup: Enabled and Mounted
-	   	Memory cgroup: Enabled and Mounted
-	   	
-	   	----------------------------Commands and software packages--------------------------
-	   	Python version: 2.7.12
-	   	NodeJS 6.10: Not found
-	   	Java 8: Not found
-	   	OpenSSL version: 1.0.2
-	   	wget: Present
-	   	realpath: Present
-	   	tar: Present
-	   	readlink: Present
-	   	basename: Present
-	   	dirname: Present
-	   	pidof: Present
-	   	df: Present
-	   	grep: Present
-	   	umount: Present
-	   	
-	   	---------------------------------Platform security----------------------------------
-	   	Hardlinks_protection: Enabled
-	   	Symlinks protection: Enabled
-	   	
-	   	-----------------------------------User and group-----------------------------------
-	   	ggc_user: Present
-	   	ggc_group: Present
-	   	
-	   	------------------------------------Results-----------------------------------------
-	   	Note:
-	   	1. It looks like the kernel uses 'systemd' as the init process. Be sure to set the
-	      	'useSystemd' field in the file 'config.json' to 'yes' when configuring Greengrass core.
-	
-	   	Missing optional dependencies:
-	   	1. Could not find the binary 'nodejs6.10'.
-	
-	   	If NodeJS 6.10 or later is installed on the device, name the binary 'nodejs6.10' and
-	   	add its parent directory to the PATH environment variable. NodeJS 6.10 or later is
-	   	required to execute NodeJS lambdas on Greengrass core.
-	   	
-	   	2. Could not find the binary 'java8'.
-	
-	   	If Java 8 or later is installed on the device name the binary 'java8' and add its
-	   	parent directory to the PATH environment variable. Java 8 or later is required to
-	   	execute Java lambdas on Greengrass core.
-	
-	
-	   ​	
-	   	----------------------------------Exit status---------------------------------------
-	   	You can now proceed to installing the Greengrass core 1.6 software on the device.
-	   	Please reach out to the AWS Greengrass support if issues arise.
+		
+		   	Output:
+		   	
+		   	==========================Checking script dependencies==============================
+		   	The device has all commands required for the script to run.
+		   	
+		   	========================Dependency check report for GGC v1.6=========================
+		   	System configuration:
+		   	Kernel architecture: x86_64
+		   	Init process: /lib/systemd/systemd
+		   	Kernel version: 4.4
+		   	C library: Ubuntu GLIBC 2.23-0ubuntu10
+		   	C library version: 2.23
+		   	Directory /var/run: Present
+		   	/dev/stdin: Found
+		   	/dev/stdout: Found
+		   	/dev/stderr: Found
+		   	
+		   	--------------------------------Kernel configuration--------------------------------
+		   	Kernel config file: /boot/config-4.4.0-1067-aws
+		   	
+		   	Namespace configs:
+		   	CONFIG_IPC_NS: Enabled
+		   	CONFIG_UTS_NS: Enabled
+		   	CONFIG_USER_NS: Enabled
+		   	CONFIG_PID_NS: Enabled
+		   	
+		   	Cgroup configs:
+		   	CONFIG_CGROUP_DEVICE: Enabled
+		   	CONFIG_CGROUPS: Enabled
+		   	CONFIG_MEMCG: Enabled
+		   	
+		   	Other required configs:
+		   	CONFIG_POSIX_MQUEUE: Enabled
+		   	CONFIG_OVERLAY_FS: Enabled
+		   	CONFIG_HAVE_ARCH_SECCOMP_FILTER: Enabled
+		   	CONFIG_SECCOMP_FILTER: Enabled
+		   	CONFIG_KEYS: Enabled
+		   	CONFIG_SECCOMP: Enabled
+		   	
+		   	------------------------------------Cgroups check-----------------------------------
+		   	Cgroups mount directory: /sys/fs/cgroup
+		   	
+		   	Devices cgroup: Enabled and Mounted
+		   	Memory cgroup: Enabled and Mounted
+		   	
+		   	----------------------------Commands and software packages--------------------------
+		   	Python version: 2.7.12
+		   	NodeJS 6.10: Not found
+		   	Java 8: Not found
+		   	OpenSSL version: 1.0.2
+		   	wget: Present
+		   	realpath: Present
+		   	tar: Present
+		   	readlink: Present
+		   	basename: Present
+		   	dirname: Present
+		   	pidof: Present
+		   	df: Present
+		   	grep: Present
+		   	umount: Present
+		   	
+		   	---------------------------------Platform security----------------------------------
+		   	Hardlinks_protection: Enabled
+		   	Symlinks protection: Enabled
+		   	
+		   	-----------------------------------User and group-----------------------------------
+		   	ggc_user: Present
+		   	ggc_group: Present
+		   	
+		   	------------------------------------Results-----------------------------------------
+		   	Note:
+		   	1. It looks like the kernel uses 'systemd' as the init process. Be sure to set the
+		      	'useSystemd' field in the file 'config.json' to 'yes' when configuring Greengrass core.
+			
+		   	Missing optional dependencies:
+		   	1. Could not find the binary 'nodejs6.10'.
+			
+		   	If NodeJS 6.10 or later is installed on the device, name the binary 'nodejs6.10' and
+		   	add its parent directory to the PATH environment variable. NodeJS 6.10 or later is
+		   	required to execute NodeJS lambdas on Greengrass core.
+		   	
+		   	2. Could not find the binary 'java8'.
+			
+		   	If Java 8 or later is installed on the device name the binary 'java8' and add its
+		   	parent directory to the PATH environment variable. Java 8 or later is required to
+		   	execute Java lambdas on Greengrass core.
+			
+			
+		   ​	
+		   	----------------------------------Exit status---------------------------------------
+		   	You can now proceed to installing the Greengrass core 1.6 software on the device.
+		   	Please reach out to the AWS Greengrass support if issues arise.
    </details>
 
-<a name="1.4"></a>
 ## 1.2 Greengrass creation in the AWS Management Console
 
 Before we install *Greengrass* we need to create the necessary certificates to be able to authenticate our *Greengrass* installation against *AWS Iot Core*. We need to create the *Grengrass* certificates in the AWS console.
 
 1. In your browser, bring up the AWS Management Console, change to the AWS IoT Core service and select the Greengrass category and select to **Get Started** in `Define a Greengrass Group` section.
+
 	![14_1](../images/14_1.png)
 
 1. Select **Use easy creation** button.
+
 	![14_2](../images/14_2.png)
 
 1. Name your group `sbe_workshop` and select **Next**.
+
 	![14_3](../images/14_3.png)
 
 1. Confirm the name of the Greengrass Group's Core is `sbe_workshop_Core` and select **Next**.
+
 	![14_4](../images/14_4.png)
 
 1. Select to **Create Group and Core**.
+
 	![14_5](../images/14_5.png)
 	
 1. Select to **Download these resources as a tar.gz**
-	![14_6](./images/14_6.png)
-	![14_7](./images/14_7.png)
+
+	![14_6](../images/14_6.png)
+	![14_7](../images/14_7.png)
 	
 1. Scroll down the page and download the correct Greengrass binary for your system, in our case this should be `x86_64  Ubuntu 14.04 - 16.04  Linux` select the **Download** link next to it.
+
 	![14_8](../images/14_8.png)
 	
 1. Confirm that the Greengrass Group was successfully created.
+
 	![14_9](../images/14_9.png)
 
 ### 1.5 Setting up Greengrass on the EC2 instance
