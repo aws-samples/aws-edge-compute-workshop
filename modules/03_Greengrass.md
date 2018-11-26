@@ -4,7 +4,7 @@
 
 ## 1.1 Preparing for the Greengrass Installation
 
-In this section we are preparing the *EC2* instance to be able to run *Greengrass* on it.
+In this section we are preparing the *EC2* instance to be able to run *Greengrass* on it. Greengrass allows us to deploy *Lambda* functions to the Snowball Edge for local execution.
 
 1. We need to create a user account `ggc_user` which will be the acocunt used to run *Greengrass* in.
 
@@ -59,47 +59,38 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 
 	`CTRL+O` to save, then `CTRL+X` to exit the editor.
 	
-1. We can now reboot the EC2 instance to pick-up the configuration changes.
+1. We can now issue the following command to pickup the configuration chanegs on the EC2 instance:
 
 	<details>
-		<summary>Command: `sudo reboot`</summary>
+		<summary>Command: `sudo sysctl --system`</summary>
 	
 		Output:
 		
-		Connection to ec2-34-222-222-74.us-west-2.compute.amazonaws.com closed by remote host.
-		Connection to ec2-34-222-222-74.us-west-2.compute.amazonaws.com closed.
+		* Applying /etc/sysctl.d/00-defaults.conf ...
+		fs.protected_hardlinks = 1
+		fs.protected_symlinks = 1
+		* Applying /usr/lib/sysctl.d/00-system.conf ...
+		* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+		* Applying /usr/lib/sysctl.d/50-default.conf ...
+		kernel.sysrq = 16
+		kernel.core_uses_pid = 1
+		net.ipv4.conf.default.rp_filter = 1
+		net.ipv4.conf.all.rp_filter = 1
+		net.ipv4.conf.default.accept_source_route = 0
+		net.ipv4.conf.all.accept_source_route = 0
+		net.ipv4.conf.default.promote_secondaries = 1
+		net.ipv4.conf.all.promote_secondaries = 1
+		fs.protected_hardlinks = 1
+		fs.protected_symlinks = 1
+		* Applying /etc/sysctl.d/99-amazon.conf ...
+		kernel.sched_autogroup_enabled = 0
+		* Applying /etc/sysctl.d/99-sysctl.conf ...
+		* Applying /etc/sysctl.conf ...
 	</details>
 	
-	![13_1](../images/13_1.png)
+	_NOTE_: Alternatively you could reboot the EC2 instance during which process your SSH session will be disconnnected automatically.
 	
-	**NB**: your SSH session will be disconnnected automatically
-	
-1. Once the reboot is finished connect back to the EC2 instance using SSH.
-
-	<details>
-		<summary>Command: `ssh -i "~/Downloads/SBE_Workshop.pem" ubuntu@ec2-34-222-222-74.us-west-2.compute.amazonaws.com`</summary>
-	
-		Output:
-		
-		Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.4.0-1067-aws x86_64)
-		
-		 * Documentation:  https://help.ubuntu.com
-		 * Management:     https://landscape.canonical.com
-		 * Support:        https://ubuntu.com/advantage
-	
-	  	Get cloud support with Ubuntu Advantage Cloud Guest:
-	​    http://www.ubuntu.com/business/services/cloud
-	
-		6 packages can be updated.
-		6 updates are security updates.
-		
-		New release '18.04.1 LTS' available.
-		Run 'do-release-upgrade' to upgrade to it.
-		
-		Last login: Fri Oct 26 14:44:13 2018 from 196.32.238.241
-	</details>
-
-1. Using the following command we can check whether the filesystem protection parameters have been successfully picked up during the reboot by the operating system.
+1. Once the configuration changes ahve been applied you can use the following command to check whether the filesystem protection parameters have been successfully picked up.
 
 	<details>
 		<summary>Command: `sudo sysctl -a | grep fs.protected`</summary>
@@ -414,8 +405,12 @@ Before we install *Greengrass* we need to create the necessary certificates to b
 1. Confirm that the Greengrass Group was successfully created.
 
 	![14_9](../images/14_9.png)
+	
+If you had issue downloading the *Grengrass* binary distribution tarball you can user the following link to donwload the correct version for the Ubuntu operating system: [greengrass-ubuntu-x86-64-1.6.0.tar.gz](https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/1.6.0/greengrass-ubuntu-x86-64-1.6.0.tar.gz)
 
-### 1.5 Setting up Greengrass on the EC2 instance
+_NOTE_: if you had issue downloading the certificates and configuration tarball for *Greengrass* then you will have to repeat the steps from this section to create a new *Greengrass* group and core.
+
+## 1.3 Setting up Greengrass on the EC2 instance
 
 Now we have created the *Greengrass* group definition and have downloaded the certificates for *Greengrass* as well as the correct *Greengrass* binary.
 
@@ -439,7 +434,7 @@ Now we have created the *Greengrass* group definition and have downloaded the ce
 		greengrass-ubuntu-x86-64-1.6.0.tar.gz         100% 9364KB  64.0KB/s   02:26
 	</details>
 	
-1. On the EC2 instance extract the Greengrass binary.
+1. On the EC2 instance extract the Greengrass binaries tarball.
 
 	<details>
 		<summary>Command: `sudo tar -xzvf greengrass-ubuntu-x86-64-1.6.0.tar.gz -C /`</summary>
@@ -565,6 +560,8 @@ Now we have created the *Greengrass* group definition and have downloaded the ce
 		greengrass/ota/ota_agent_v1.0.0/LICENSE/Greengrass AWS SW License vr6.txt
 		greengrass/ota/ota_agent
 	</details>
+	
+	This command will extract the *Greengrass* tarball into the root directory on your *EC2* instance you can now find the extracted files under `/greengrass`.
 	
 1. Extract the certificate and configuration information into the `/greengrass` directory.
 

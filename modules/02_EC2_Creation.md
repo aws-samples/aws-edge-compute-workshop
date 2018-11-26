@@ -16,11 +16,13 @@ We are now creating an EC2 instance and install the necessary software on that i
 
 1. **Select** to launch `Ubuntu Server 16.04 LTS (HVM), SSD Volume Type` from the list.
 
+	_NOTE_: if you cannot locate the `Ubuntu Server 16.04 LTS` AMI you could also select the `Ubuntu Server 18.04 LTS` version of the AMI.
+
   ![11_2](../images/11_2.png)
 
 1. For this workshop we are using a smaller instance type to build our Amazon Machine Image (AMI). Choose the `t3.micro` instance type and click **Configure Instance Details** 
 
-   NOTE: If you were actually building an AMI for the Snowball Edge device, you would want to select the `p3.2xlarge` instance type. Unfortunately, we don't have that instance available for the workshop. 
+   _NOTE_: If you were actually building an AMI for the new Snowball Edge device with GPU support, you would want to select the `p3.2xlarge` instance type. Unfortunately, we don't have that instance available for the workshop. 
 
 1. Use the `Network` drop down box to select **Demo VPC**. 
 
@@ -43,7 +45,8 @@ We are now creating an EC2 instance and install the necessary software on that i
    * *Description*: `MQTT Communications`
    
    This change to the security group is necessary in order to enable *Greengrass* to communicate with *AWS IoT Core* via MQTT using certificate based authentication.
-   <mark>should we leave the default ssh rule open to anywhere?</mark>
+   
+   	_NOTE_: in a live environment we would not recommend to leave the any ports open to all IP addresses if possible.
 
 1. Review the selected configuration and confirm by pressing the **Launch** button.
 	
@@ -59,9 +62,11 @@ We are now creating an EC2 instance and install the necessary software on that i
 
 ### 1.2 Connecting to the new instance from your computer
 
+If you do not want or cannot use your own computer for these steps you can also go through these steps using the embedded console in your *Cloud9* environment.
+
 1. On your computer make sure that the private key you downloaded has the correct permissions set.
 
-  Command: `chmod 600 ~/Downloads/SBE_Workshop.pem` <mark>we could change this to use cloud9 in stead of the local pc/mac</mark>
+  Command: `chmod 600 ~/Downloads/SBE_Workshop.pem`
 
   ![12_1](../images/12_1.png)
 
