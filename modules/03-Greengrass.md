@@ -375,36 +375,36 @@ Before we install *Greengrass* we need to create the necessary certificates to b
 
 1. In your browser, bring up the AWS Management Console, change to the AWS IoT Core service and select the Greengrass category and select to **Get Started** in `Define a Greengrass Group` section.
 
-	![14_1](../images/14_1.png)
+	![14_1](/api/workshops/sbe-workshop-2018/content/assets/images/14_1.png)
 
 1. Select **Use easy creation** button.
 
-	![14_2](../images/14_2.png)
+	![14_2](/api/workshops/sbe-workshop-2018/content/assets/images/14_2.png)
 
 1. Name your group `sbe_workshop` and select **Next**.
 
-	![14_3](../images/14_3.png)
+	![14_3](/api/workshops/sbe-workshop-2018/content/assets/images/14_3.png)
 
 1. Confirm the name of the Greengrass Group's Core is `sbe_workshop_Core` and select **Next**.
 
-	![14_4](../images/14_4.png)
+	![14_4](/api/workshops/sbe-workshop-2018/content/assets/images/14_4.png)
 
 1. Select to **Create Group and Core**.
 
-	![14_5](../images/14_5.png)
+	![14_5](/api/workshops/sbe-workshop-2018/content/assets/images/14_5.png)
 	
 1. Select to **Download these resources as a tar.gz**
 
-	![14_6](../images/14_6.png)
-	![14_7](../images/14_7.png)
+	![14_6](/api/workshops/sbe-workshop-2018/content/assets/images/14_6.png)
+	![14_7](/api/workshops/sbe-workshop-2018/content/assets/images/14_7.png)
 	
 1. Scroll down the page and download the correct Greengrass binary for your system, in our case this should be `x86_64  Ubuntu 14.04 - 16.04  Linux` select the **Download** link next to it.
 
-	![14_8](../images/14_8.png)
+	![14_8](/api/workshops/sbe-workshop-2018/content/assets/images/14_8.png)
 	
 1. Confirm that the Greengrass Group was successfully created.
 
-	![14_9](../images/14_9.png)
+	![14_9](/api/workshops/sbe-workshop-2018/content/assets/images/14_9.png)
 	
 If you had issue downloading the *Grengrass* binary distribution tarball you can user the following link to donwload the correct version for the Ubuntu operating system: [greengrass-ubuntu-x86-64-1.6.0.tar.gz](https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/1.6.0/greengrass-ubuntu-x86-64-1.6.0.tar.gz)
 

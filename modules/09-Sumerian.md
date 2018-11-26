@@ -67,7 +67,7 @@ Resources:
 
 1. Once the assets are imported, navigate to the panel on the right and click on the AWS Configuration tab and then paste the **Cognito Identity Pool ID** copied earlier in the textfield.
 
-![](../images/Sumerian_Cognito_ID.png)
+![](/api/workshops/sbe-workshop-2018/content/assets/images/Sumerian_Cognito_ID.png)
 
 
 
@@ -112,7 +112,7 @@ Confirm that the upload is successful, by clicking the gestureBig folder and ver
 
 Click the **Main** tab from the panel in the right side of the Sumerian console. Expand the **SendOpenPose** section and verify that the `Bucket Name`, `OpenPose Folder`, and `Project Folder` field names match your S3 bucket heirarchy.
 
-![](../images/Sumerian_Main_SendOpenPose.png)
+![](/api/workshops/sbe-workshop-2018/content/assets/images/Sumerian_Main_SendOpenPose.png)
 
 ### 1.5 Running the Scene in Sumerian
 

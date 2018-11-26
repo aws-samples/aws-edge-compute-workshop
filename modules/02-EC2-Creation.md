@@ -12,13 +12,13 @@ We are now creating an EC2 instance and install the necessary software on that i
 
 1. Select **Launch Instance**.
 
-  ![11_1](../images/11_1.png)
+  ![11_1](/api/workshops/sbe-workshop-2018/content/assets/images/11_1.png)
 
 1. **Select** to launch `Ubuntu Server 16.04 LTS (HVM), SSD Volume Type` from the list.
 
 	_NOTE_: if you cannot locate the `Ubuntu Server 16.04 LTS` AMI you could also select the `Ubuntu Server 18.04 LTS` version of the AMI.
 
-  ![11_2](../images/11_2.png)
+  ![11_2](/api/workshops/sbe-workshop-2018/content/assets/images/11_2.png)
 
 1. For this workshop we are using a smaller instance type to build our Amazon Machine Image (AMI). Choose the `t3.micro` instance type and click **Configure Instance Details** 
 
@@ -34,7 +34,7 @@ We are now creating an EC2 instance and install the necessary software on that i
 
 1. Add a `Custom TCP` rule to the instance's security group by selecting to **Add Rule**.
 
-   ![11_4](../images/11_4.png)
+   ![11_4](/api/workshops/sbe-workshop-2018/content/assets/images/11_4.png)
    
    **NB**: The configuration should be as follows:
 
@@ -50,15 +50,15 @@ We are now creating an EC2 instance and install the necessary software on that i
 
 1. Review the selected configuration and confirm by pressing the **Launch** button.
 	
-	![11_5](../images/11_5.png)
+	![11_5](/api/workshops/sbe-workshop-2018/content/assets/images/11_5.png)
 
 1. Create a new keypair, call it `SBE_Workshop` and download the private key, select to **Launch Instance**.
 
-   ![11_6](../images/11_6.png)
+   ![11_6](/api/workshops/sbe-workshop-2018/content/assets/images/11_6.png)
 
 1. Once you have created the instance and downloaded the private key click to **View Instances** to confirm that everything is running fine.
 	
-	![11_7](../images/11_7.png)
+	![11_7](/api/workshops/sbe-workshop-2018/content/assets/images/11_7.png)
 
 ### 1.2 Connecting to the new instance from your computer
 
@@ -68,11 +68,11 @@ If you do not want or cannot use your own computer for these steps you can also 
 
   Command: `chmod 600 ~/Downloads/SBE_Workshop.pem`
 
-  ![12_1](../images/12_1.png)
+  ![12_1](/api/workshops/sbe-workshop-2018/content/assets/images/12_1.png)
 
 1. Look up the connection information for your instance in the EC2 console.
 	
-	![12_2](../images/12_2.png)
+	![12_2](/api/workshops/sbe-workshop-2018/content/assets/images/12_2.png)
 	
 1. Use the connection information to create an SSH session to your running instance.
 
@@ -110,8 +110,8 @@ If you do not want or cannot use your own computer for these steps you can also 
 	  	See "man sudo_root" for details.
   </details>
 
-  ![12_3](../images/12_3.png)
-  ![12_4](../images/12_4.png)
+  ![12_3](/api/workshops/sbe-workshop-2018/content/assets/images/12_3.png)
+  ![12_4](/api/workshops/sbe-workshop-2018/content/assets/images/12_4.png)
 
 1. Once connected to the *EC2* instance check whether there are any updates available.
 
@@ -423,7 +423,7 @@ If you do not want or cannot use your own computer for these steps you can also 
 	  	W: mdadm: /etc/mdadm/mdadm.conf defines no arrays.
   </details>
 
-  ![12_5](../images/12_5.png)
+  ![12_5](/api/workshops/sbe-workshop-2018/content/assets/images/12_5.png)
 
 1. Well done! You now have an up-to-date Ubuntu instance. Move on to the next module to add AWS Greengrass.
 

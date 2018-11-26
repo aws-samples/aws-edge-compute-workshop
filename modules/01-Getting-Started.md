@@ -5,11 +5,11 @@
 ### 1.1 General flow of the workshop
 1. Here is a flowchart showing the high level steps from a camera to Amazon Sumerian: 
 
-	![Sumerian Workflow](1_2.png)
+	![Sumerian Workflow](/api/workshops/sbe-workshop-2018/content/assets/images/1_2.png)
 
 1. Here is the workshop architecture:
 
-	![](../images/1_1.png)
+	![](/api/workshops/sbe-workshop-2018/content/assets/images/1_1.png)
 
 ## 1.2 Navigation
 
