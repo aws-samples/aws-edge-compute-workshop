@@ -15,7 +15,7 @@ modules:
     name: Permissions
   modules_07-Lambdas:
     name: Lambda
-  modules_08-Greengrass_Deployment:
+  modules_08-Greengrass-Deployment:
     name: Greengrass
   modules_09-Sumerian:
     name: Sumerian
