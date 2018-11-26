@@ -17,6 +17,6 @@ modules:
   - "modules_05-OpenPose"
   - "modules_06-Permissions"
   - "modules_07-Lambdas"
-  - "modules_08-Greengrass_Deployment"
+  - "modules_08-Greengrass-Deployment"
   - "modules_09-Sumerian"
   - "modules_10-beyond-the-workshop"
