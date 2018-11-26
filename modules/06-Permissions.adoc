@@ -1,0 +1,62 @@
+= Workshop - Module 6
+
+== Permissions
+
+In order to be able to have _Greengrass_ and _Lambda_ hosted functions interact with other parts of the AWS eco-system of services we need to ensure that the necessary permissions are made available through service roles for each of the services (i.e. for the _Greengrass_ saervcie and for the _Lambda_ service).
+
+=== 1.1 Create service role for use with _Lambda_
+
+. Bring up the AWS console in your browser and change to the _IAM_ service.
+
+image:/api/workshops/sbe-workshop-2018/content/assets/images/18_1.png[18_1]
+
+. Change to the _Roles_ section and select to *Create role*.
+
+image:/api/workshops/sbe-workshop-2018/content/assets/images/18_2.png[18_2]
+
+. Leave *AWS service* selected in the `Select type of trust entity` and select *Lambda* from the section `Choose the service that will use this role`.
+
+image:/api/workshops/sbe-workshop-2018/content/assets/images/18_3.png[18_3]
+
+. Search for and assign the following list of policies to the new role:
+
+.. `AmazonS3FullAccess`
+.. `CloudWatchFullAccess`
+.. `AWSGreengrassResourceAccessRolePolicy`
+.. `AWSIoTFullAccess`
+.. `AWSGreengrassFullAccess`
+
+image:/api/workshops/sbe-workshop-2018/content/assets/images/18_4.png[18_4]
+
+. Name the new role `sbe-workshop-lambda-role` and select to *Create role*.
+
+image:/api/workshops/sbe-workshop-2018/content/assets/images/18_5.png[18_5]
+
+=== 1.2 Create service role for use with _Greengrass_
+
+. Create a another new role, this time we select *Greengrass* in the section `Choose the service that will use this role`.
+
+image:/api/workshops/sbe-workshop-2018/content/assets/images/18_6.png[18_6]
+
+. Search for and assign the following list of policies to the new role:
+
+.. `AWSLambdaFullAcces`
+.. `AmazonS3FullAccess`
+.. `CloudWatchFullAccess`
+.. `AWSGreengrassResourceAccessRolePolicy`
+.. `AWSIoTFullAccess`
+.. `AWSGreengrassFullAccess`
+
+image:/api/workshops/sbe-workshop-2018/content/assets/images/18_7.png[18_7]
+
+. Name the new role `sbe-workshop-greengrass-role` and select to *Create role*.
+
+== Greengrass service role versus Greegrass group role
+
+IAM role for AWS Greengrass service
+AWS Greengrass helps deploy AWS lambda functions to devices for local execution of applications. This role grants the AWS Greengrass service permissions it needs to create required resources and make calls on your behalf. We will pass this role to AWS Greengrass.
+
+IAM role for AWS Greengrass device groups
+This role grants Lambda functions running on the device the permissions it needs to interact with AWS. We will pass this role to AWS Greengrass.
+
+https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html#gg-group[Learn more]
