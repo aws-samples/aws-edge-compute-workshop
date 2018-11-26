@@ -21,6 +21,8 @@ To get started you will first login to the Workshop. The workshop will create an
 
 1. Once you are logged in, please move on to module 02
 
-**Note**: You should have received a piece of paper with a hash token on it. If not, please request one from one of the lab assistants.
+**Note**: *You should have received a piece of paper with a hash token on it. If not, please request one from one of the lab assistants.*
 
-<mark>_***TODO***_ should we still reference the 'piece of paper'?</mark>
+## Legal Notice
+
+By engaging in this workshop, you acknowledge that the AWS account used for AWS Snowball Edge and AWS Greengrass for Fun and Profit - STG388, may be used only for this workshop. All accounts used during the workshop will be closed immediately at the conclusion of the workshop. Any content in this AWS account will not be retrievable by you or any other workshop participants after the workshop has finished.
