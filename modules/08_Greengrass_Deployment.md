@@ -50,11 +50,10 @@ In this part we are identifying the *Lambda* function on the cloud which should 
 
 	![111_8](../images/111_8.png)
 
-1. From the list of existing Lambda functions select the function named `SBE-Workshop-Grengrass` which was created in [section 1.10 - Greengrass Lambda](#1.10-GreengrassLambda) and sekect **Next**.
+1. From the list of existing Lambda functions select the function named `SBE-Workshop-Grengrass` which was created in Module 7 section 1.1 and select **Next**.
 
-	<mark>_***@TODO***_ Update the link to point to the right section.</mark>
 
-	![111_9](./images/111_9.png)
+	![111_9](../images/111_9.png)
 
 1. Select the latest version which is available for your Lambda function, in this case this should probably be `Version 1` and select **Finish**.
 

@@ -74,8 +74,7 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 	
 ##### S3 Lambda
 
-1. In order to start populating the code for our Lambda functions select the **AWS resources** tab on the right edge of the IDE, expand the **Remote Functions** section and you should see the two Lambda functions we created in [section 1.9](#1.9).
-	<mark>_***@TODO***_ Update the link to point to the correct section.</mark>
+1. In order to start populating the code for our Lambda functions select the **AWS resources** tab on the right edge of the IDE, expand the **Remote Functions** section and you should see the two Lambda functions we created in this module in section 1.1.
 
 	![110_5](../images/110_5.png)
 
