@@ -51,7 +51,7 @@ In order to be able to have *Greengrass* and *Lambda* hosted functions interact 
 
 8. Name the new role `sbe-workshop-greengrass-role` and select to **Create role**.
 
-## Greengrass service role versus Greegrass group role explanation
+## Greengrass service role versus Greegrass group role
 
 IAM role for AWS Greengrass service
 AWS Greengrass helps deploy AWS lambda functions to devices for local execution of applications. This role grants the AWS Greengrass service permissions it needs to create required resources and make calls on your behalf. We will pass this role to AWS Greengrass.

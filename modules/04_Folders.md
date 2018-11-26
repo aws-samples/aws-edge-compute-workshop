@@ -1,6 +1,5 @@
 # Workshop - Module 4
 
-<a name="1.7"></a>
 ## 1. Setting up S3 and EC2 folders
 
 In order to emulate the filesystem on the *Snowball Edge* we will use *S3* in the cloud and the local filesystem on *EC2*.
@@ -12,19 +11,23 @@ In the first instance we will use the AWS console to create an S3 bucket and two
 1. Bring up the *AWS* console in your browser and change to the *S3* service.
 
 2. Create an S3 bucket and call it `sbeworkshop-` and append your shortname to it, e.g. `sbeworkshop-weitzelm`. Accept the default settings for the bucket settings.
+
 	![17_1](../images/17_1.png)
 	![17_2](../images/17_2.png)
 	![17_3](../images/17_3.png)
 	![17_4](../images/17_4.png)
 	
 3. Using the managment console navigate into the S3 bucket.
+
 	![17_5](../images/17_5.png)
 	
 4. Inside the S3 bucket we can now create two folders. One will be used to upload files to, the second folder will receive the processed output available for download and use with downstream service, e.g. *Sumerian*. Select to **Create folder** in your new bucket and call it `upload`.
+
 	![17_6](../images/17_6.png)
 	![17_7](../images/17_7.png)
 	
 5. Select to **Create folder** in the same bucket and call it `download`.
+
 	![17_8](../images/17_8.png)
 	![17_9](../images/17_9.png)
 
