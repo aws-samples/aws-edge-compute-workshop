@@ -1,5 +1,5 @@
 ---
-id:"sbe-workshop-2018"
+id: "sbe-workshop-2018"
 name: "Snowball Edge Workshop"
 workshop_title: "AWS Snowball Edge and AWS Greengrass for Fun and Profit"
 revision: reinvent-2018
@@ -10,16 +10,13 @@ vars:
   WORKSHOP_VERSION: v1.0
 modules:
   activate:
-  - "modules_getting_started"
-  - "modules_create_ami"
-  - "modules_sumerian"
-  - "modules_getting_started"
-  - "modules_ec2_creation"
-  - "modules_greengrass"
-  - "modules_folders"
-  - "modules_openpose"
-  - "modules_permissions"
-  - "modules_lambdas"
-  - "modules_greengrass_deployment"
-  - "modules_sumerian"
-  - "modules_beyond_the_workshop"
+  - "modules_01-Getting-Started"
+  - "modules_02-EC2-Creation"
+  - "modules_03-Greengrass"
+  - "modules_04-Folders"
+  - "modules_05-OpenPose"
+  - "modules_06-Permissions"
+  - "modules_07-Lambdas"
+  - "modules_08-Greengrass_Deployment"
+  - "modules_09-Sumerian"
+  - "modules_10-beyond-the-workshop"

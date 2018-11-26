@@ -1,24 +1,23 @@
 config:
     renderer: markdown
-
 modules:
-  modules_getting_started:
-    name: 01_Getting_Started
-  modules_ec2_creation:
-    name: 02_EC2_Creation
-  modules_greengrass:
-    name: 03_Greengrass
-  modules_folders:
-    name: 04_Folders
-  modules_openpose:
-    name: 05_OpenPose
-  modules_permissions:
-    name: 06_Permissions
-  modules_lambdas:
-    name: 07_Lambdas
-  modules_greengrass_deployment:
-    name: 08_Greengrass_Deployment
-  modules_sumerian:
-    name: 09_Sumerian
-  modules_beyond_the_workshop:
-    name: 10_beyond_the_workshop
+  modules_01-Getting-Started:
+    name: Getting Started
+  modules_02-EC2-Creation:
+    name: EC2 Creation
+  modules_03-Greengrass:
+    name: Greengrass
+  modules_04-Folders:
+    name: Folders
+  modules_05-OpenPose:
+    name: OpenPose
+  modules_06-Permissions:
+    name: Permissions
+  modules_07-Lambdas:
+    name: Lambda
+  modules_08-Greengrass_Deployment:
+    name: Greengrass
+  modules_09-Sumerian:
+    name: Sumerian
+  modules_10-beyond-the-workshop:
+    name: Beyond the Workshop
