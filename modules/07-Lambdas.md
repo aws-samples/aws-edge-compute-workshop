@@ -40,11 +40,29 @@ In order to build our workflow we need a couple of *Lambda* functions that act a
 	* Download link for Greengrass SDK for Python:
 	[greengrass-core-python-sdk-1.2.0.tar.gz](https://d1onfpft10uf5o.cloudfront.net/greengrass-sdk/downloads/python/2.7/greengrass-core-python-sdk-1.2.0.tar.gz)
 
-`tar -zxvf ./greengrass-core-python-sdk-1.2.0.tar.gz`
+1. Upload the *Greengrass SDK* to the correct *Cloud9* folder.
 
-`cp ./aws_greengrass_core_sdk/sdk/python_sdk_1_2_0.zip .`
+	1. Select the `SBE-Workshop-Greengrass` folder in your *Cloud9* environment
 
-`unzip python_sdk_1_2_0.zip`
+		![110_12](/api/workshops/sbe-workshop-2018/content/assets/images/110_31.png)
+
+	1. Select the `File` pulldown menu and select `Upload Local Files...`
+
+		![110_12](/api/workshops/sbe-workshop-2018/content/assets/images/110_32.png)
+
+	1. Select to upload `greengrass-core-python-sdk-1.2.0.tar.gz`.
+
+	1. Extract the *Greengrass SDK*.
+
+		Command: `tar -zxvf ./greengrass-core-python-sdk-1.2.0.tar.gz`
+
+	1. After the extraction copy the `python_sdk_1_2_0.zip` into the root of the `SBE-Workshop-Greengrass` folder.
+
+		Command: `cp ./aws_greengrass_core_sdk/sdk/python_sdk_1_2_0.zip .`
+
+	1. Now unzip the `Greengrass SDK`.
+
+		Command: `unzip python_sdk_1_2_0.zip`
 
 ### 1.3 Using the *Cloud9* environment for *Lambda* development
 
