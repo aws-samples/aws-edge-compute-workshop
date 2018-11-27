@@ -41,7 +41,7 @@ We now need a folder on the EC2 instance's filesystem that we will download sour
 
 3. Create a new directory called `src` using the command `mkdir src`.
 
-4. Chage into the newly created directory using `cd src`.
+4. Change into the newly created directory using `cd src`.
 
 5. Create a new directory called `upload` using the command `mkdir upload`.
 

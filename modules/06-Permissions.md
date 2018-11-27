@@ -2,7 +2,7 @@
 
 ## Permissions
 
-In order to be able to have *Greengrass* and *Lambda* hosted functions interact with other parts of the AWS eco-system of services we need to ensure that the necessary permissions are made available through service roles for each of the services (i.e. for the *Greengrass* saervcie and for the *Lambda* service).
+In order to be able to have *Greengrass* and *Lambda* hosted functions interact with other parts of the AWS ecosystem of services we need to ensure that the necessary permissions are made available through service roles for each of the services (i.e. for the *Greengrass* service and for the *Lambda* service).
 
 ### 1.1 Create service role for use with *Lambda*
 
@@ -34,7 +34,7 @@ In order to be able to have *Greengrass* and *Lambda* hosted functions interact 
 
 ### 1.2 Create service role for use with *Greengrass*
 
-6. Create a another new role, this time we select **Greengrass** in the section `Choose the service that will use this role`.
+6. Create another new role, this time we select **Greengrass** in the section `Choose the service that will use this role`.
 
 	![18_6](/api/workshops/sbe-workshop-2018/content/assets/images/18_6.png)
 	
@@ -51,13 +51,13 @@ In order to be able to have *Greengrass* and *Lambda* hosted functions interact 
 
 8. Name the new role `sbe-workshop-greengrass-role` and select to **Create role**.
 
-## Greengrass service role versus Greegrass group role
+## Greengrass service role versus Greengrass group role
 
-IAM role for AWS Greengrass service
-AWS Greengrass helps deploy AWS lambda functions to devices for local execution of applications. This role grants the AWS Greengrass service permissions it needs to create required resources and make calls on your behalf. We will pass this role to AWS Greengrass.
+IAM role for AWS Greengrass service: 
+AWS Greengrass helps deploy AWS Lambda functions to devices for local execution of applications. This role grants the AWS Greengrass service permissions it needs to create required resources and make calls on your behalf. We will pass this role to AWS Greengrass.
 
-IAM role for AWS Greengrass device groups
-This role grants Lambda functions running on the device the permissions it needs to interact with AWS. We will pass this role to AWS Greengrass.
+IAM role for AWS Greengrass device groups:
+This role grants Lambda functions running on the device the permissions they need to interact with AWS. We will pass this role to AWS Greengrass.
 
 [Learn more](https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html#gg-group)
 

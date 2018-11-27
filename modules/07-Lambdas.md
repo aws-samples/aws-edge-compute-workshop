@@ -10,7 +10,7 @@ In order to build our workflow we need a couple of *Lambda* functions that act a
 
 	![19_1](/api/workshops/sbe-workshop-2018/content/assets/images/19_1.png)
 	
-2. Select to **Author from scratch**, assing a name of `SBE-Workshop-S3-Watcher`, change the **Runtime** to `Python 2.7` and select `Choose existing role` from the **Role** drop-down, select the `sbe-workshop-lambda-role` entry from the **Existing role** drop-down, then select to **Create function**.
+2. Select to **Author from scratch**, passing a name of `SBE-Workshop-S3-Watcher`, change the **Runtime** to `Python 2.7` and select `Choose existing role` from the **Role** drop-down, select the `sbe-workshop-lambda-role` entry from the **Existing role** drop-down, then select to **Create function**.
 
 	![19_3](/api/workshops/sbe-workshop-2018/content/assets/images/19_3.png)
 	
@@ -19,7 +19,7 @@ In order to build our workflow we need a couple of *Lambda* functions that act a
 	![19_4](/api/workshops/sbe-workshop-2018/content/assets/images/19_4.png)
 	![19_5](/api/workshops/sbe-workshop-2018/content/assets/images/19_5.png)
 
-4. Scroll down to the **Configure triggers** section, select `sbe-workshop` (the name assigned in Section 1.7 step 1) from the **Bucket** drop-down, leave `Object Created (All)` in the **Event type** and add `upload` to the **Prefix** field, then press the **Add** button.
+4. Scroll down to the **Configure triggers** section, select the S3 bucket that you created in Module 4 (e.g. `e.g. sbeworkshop-weitzelm`) from the **Bucket** drop-down, leave `Object Created (All)` in the **Event type** and add `upload` to the **Prefix** field, then press the **Add** button.
 
 	![19_6](/api/workshops/sbe-workshop-2018/content/assets/images/19_6.png)
 	![19_7](/api/workshops/sbe-workshop-2018/content/assets/images/19_7.png)
@@ -32,7 +32,7 @@ In order to build our workflow we need a couple of *Lambda* functions that act a
 
 ### 1.2 Create Lambda function for deployment to Greengrass
 
-1. Repeat the steps for **Greengrass** lambda function and call it `SBE-Workshop-Greengrass`. For this function we do not need to configure a trigger since we will invoke it through the `MQTT` message which will be sent by our first Lambda function when a file gets uploaded to S3.
+1. Repeat the steps to create the **Greengrass** Lambda function and call it `SBE-Workshop-Greengrass`. For this function we do not need to configure a trigger since we will invoke it through the `MQTT` message which will be sent by our first Lambda function when a file gets uploaded to S3.
 
 	![110_12](/api/workshops/sbe-workshop-2018/content/assets/images/110_12.png)
 	![110_13](/api/workshops/sbe-workshop-2018/content/assets/images/110_13.png)
