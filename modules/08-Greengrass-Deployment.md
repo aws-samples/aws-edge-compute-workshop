@@ -6,9 +6,7 @@ We have *Greengrass* installed and configured and have created Lambda function w
 
 ### 1.1 Prepare Greengrass deployment
 
-1. In the *AWS* console change to the *IoT Core* service console, select **Greengrass** from the section on the left and then select **Groups**, you should see the **Greengrass Group** called `sbe_workshop` which was created in [section 1.4](#1.4)
-
-	<mark>_***@TODO***_ Update the link to point to the right section.</mark>
+1. In the *AWS* console change to the *IoT Core* service console, select **Greengrass** from the section on the left and then select **Groups**, you should see the **Greengrass Group** called `sbe_workshop` which was created in Module 3 section 1.2
 
 	![111_1](/api/workshops/sbe-workshop-2018/content/assets/images/111_1.png)
 	
@@ -137,9 +135,7 @@ The service role we previously created for *Greengrass* needs to be assigned to 
 
 	![111_35](/api/workshops/sbe-workshop-2018/content/assets/images/111_35.png)
 
-1. On the following screen select the existing role which we configured in [section 1.8.6](#1.8.6) and select **Save**.
-
-	<mark>_***@TODO***_ Update the link to point to the right section.</mark>
+1. On the following screen select the existing role which we configured in Module 6 section 1.2 and select **Save**.
 
 	![111_36](/api/workshops/sbe-workshop-2018/content/assets/images/111_36.png)
 
