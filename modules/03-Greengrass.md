@@ -33,13 +33,13 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 	
 	`CTRL+O` to save, then `CTRL+X` to exit the editor.
 	
-1. We can now issue the following command to pickup the configuration chanegs on the EC2 instance:
+1. We can now issue the following command to pickup the configuration changes on the EC2 instance:
 
 	Command: `sudo sysctl --system`
 	
 	_NOTE_: Alternatively you could reboot the EC2 instance during which process your SSH session will be disconnnected automatically.
 	
-1. Once the configuration changes ahve been applied you can use the following command to check whether the filesystem protection parameters have been successfully picked up.
+1. Once the configuration changes have been applied you can use the following command to check whether the filesystem protection parameters have been successfully picked up.
 
 	Command: `sudo sysctl -a | grep fs.protected`
 
@@ -59,7 +59,7 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 
 	Command: `sudo bash ./cgroupfs-mount.sh`
 
-1. To be able to execute local Lambda function we need to ascertain that the necessary programming runtimes are installed and availble on the system. In thcase we install Python 2.7 and the Python package manager PIP. If you want tot used Javascript or Java for your local Lambda function you need to make sure you install those environments on the EC2 instance as well and configure them correctly.
+1. To be able to execute local Lambda function we need to ascertain that the necessary programming runtimes are installed and available on the system. In this case we install Python 2.7 and the Python package manager PIP. If you want to use Javascript or Java for your local Lambda functions you need to make sure you install those environments on the EC2 instance as well and configure them correctly.
 	
 	Command: `sudo apt install python2.7 python-pip -y`
 
