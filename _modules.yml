@@ -1,5 +1,3 @@
-config:
-    renderer: adoc
 modules:
   modules_01-Getting-Started:
     name: Getting Started
