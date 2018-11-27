@@ -105,6 +105,10 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 		sysctl: reading key "net.ipv6.conf.lo.stable_secret"
 	</details>
 
+1. Change back to the user's home directory.
+
+	Command: `cd ~`
+
 1. Now we need to download a shell script file in order to add support for cgroup-mount on the EC2 instance.
 
 	<details>
