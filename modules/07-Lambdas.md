@@ -112,7 +112,8 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 
 	![110_9](/api/workshops/sbe-workshop-2018/content/assets/images/110_9.png)
 	
-	* `SBE-Workshop-S3-Watcher` code:
+	`SBE-Workshop-S3-Watcher` code:
+
 
 	```
 		#
@@ -179,6 +180,7 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 		    return
 	```
 	
+	
 5. Now, while having the **Local function** selected, press the upward poiting arrow in order to update the Lambda function in the cloud.
 
 	![110_10](/api/workshops/sbe-workshop-2018/content/assets/images/110_10.png)
@@ -197,7 +199,8 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 
 	![110_18](/api/workshops/sbe-workshop-2018/content/assets/images/110_18.png)
 
-	* `SBE-Workshop-Greengrass` code:
+	`SBE-Workshop-Greengrass` code:
+
 
 	```
 		#
