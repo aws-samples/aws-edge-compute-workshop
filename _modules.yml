@@ -16,7 +16,7 @@ modules:
   modules_07-Lambdas:
     name: Lambda
   modules_08-Greengrass-Deployment:
-    name: Greengrass
+    name: Greengrass Deployment
   modules_09-Sumerian:
     name: Sumerian
   modules_10-beyond-the-workshop:
