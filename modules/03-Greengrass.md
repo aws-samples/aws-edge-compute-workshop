@@ -14,7 +14,7 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 
 	Command: `sudo addgroup --system ggc_group`
 
-1. We now need to change into a fodler on the file system in order to adjust the configuration of the instance to support cgroup with the necessary filesystem protection used by *Greengrass*.
+1. We now need to change into a folder on the file system in order to adjust the configuration of the instance to support cgroup with the necessary filesystem protection used by *Greengrass*.
 
 	Command: `cd /etc/sysctl.d`
 	
