@@ -28,11 +28,9 @@ In this section we are preparing the *EC2* instance to be able to run *Greengras
 
 	Add to the file:
 
-	```
-	fs.protected_hardlinks = 1
-	fs.protected_symlinks = 1
-	```
-
+		fs.protected_hardlinks = 1
+		fs.protected_symlinks = 1
+	
 	`CTRL+O` to save, then `CTRL+X` to exit the editor.
 	
 1. We can now issue the following command to pickup the configuration chanegs on the EC2 instance:

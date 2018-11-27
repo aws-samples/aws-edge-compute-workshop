@@ -46,7 +46,7 @@ We are now creating an EC2 instance and installing the necessary software on tha
    
    This change to the security group is necessary in order to enable *Greengrass* to communicate with *AWS IoT Core* via MQTT using certificate based authentication.
    
-   	_NOTE_: in a live environment we would not recommend to leave the any ports open to all IP addresses if possible.
+   _NOTE_: in a live environment we would not recommend to leave the any ports open to all IP addresses if possible.
 
 1. Review the selected configuration and confirm by pressing the **Launch** button.
 	
