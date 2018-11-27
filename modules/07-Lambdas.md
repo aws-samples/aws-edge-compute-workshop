@@ -177,7 +177,6 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 		                raise
 		    
 		    return
-
 	```
 	
 5. Now, while having the **Local function** selected, press the upward poiting arrow in order to update the Lambda function in the cloud.
