@@ -114,8 +114,6 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 	
 	`SBE-Workshop-S3-Watcher` code:
 
-
-	```
 		#
 		# Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 		#
@@ -178,7 +176,6 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 		                raise
 		    
 		    return
-	```
 	
 	
 5. Now, while having the **Local function** selected, press the upward poiting arrow in order to update the Lambda function in the cloud.
@@ -201,8 +198,6 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 
 	`SBE-Workshop-Greengrass` code:
 
-
-	```
 		#
 		# Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 		#
@@ -245,7 +240,6 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 		        raise e
 		
 		    return
-	```
 
 
 3. Using the command line terminal at the bottom of the *Cloud9* environment issue the following commands:
