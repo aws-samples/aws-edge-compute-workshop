@@ -271,6 +271,13 @@ We can speed up the developement of our Lambda function by using the *Cloud9* ho
 	![110_29](/api/workshops/sbe-workshop-2018/content/assets/images/110_29.png)
 	![110_30](/api/workshops/sbe-workshop-2018/content/assets/images/110_30.png)	
 
+## Lambda ZIP files
+
+In case you encounter any issues with the above creation of the *Lambda* code you alternatively can use the below linked ZIP files and upload those to the locally sync'ed *Lambda* functions in your *Cloud9* environment and extract them there.
+
+* [SBE-Workshop-S3-Watcher](https://d2v6q7wk8kxyee.cloudfront.net/SBE-Workshop-S3-Watcher.zip)
+* [SBE-Workshop-Greengrass](https://d2v6q7wk8kxyee.cloudfront.net/SBE-Workshop-Greengrass-3.zip)
+
 ## Explanation of different SDKs being used
 
 **AWS SDKs**
