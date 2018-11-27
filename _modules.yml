@@ -1,5 +1,5 @@
 config:
-    renderer: markdown
+    renderer: adoc
 modules:
   modules_01-Getting-Started:
     name: Getting Started
