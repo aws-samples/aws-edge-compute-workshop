@@ -2,7 +2,7 @@
 
 ## 1. EC2 Creation
 
-We are now creating an EC2 instance and install the necessary software on that instance in order to be abel to create the Amazon Machine Image (AMI) which we can use for deplyoing to the Snwoball Edge device.
+We are now creating an EC2 instance and installing the necessary software on that instance in order to be able to create the Amazon Machine Image (AMI) which we can use for deplyoing to the Snwoball Edge device.
 
 ### 1.1 Launching a new instance
 
