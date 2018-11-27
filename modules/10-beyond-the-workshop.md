@@ -7,11 +7,12 @@ NOTE: **This is informational only** - so that you are able to understand the pr
 ### 10.1 The Snowball Edge Ordering process
 
 1. Use the AWS Management Console to connect to the SnowBall service and choose the  **Create job** button, then select **Local compute and storage only**
-![10_1.jpg](/api/workshops/sbe-workshop-2018/content/assets/images/10_1.jpg)
+
+	![10_1.jpg](/api/workshops/sbe-workshop-2018/content/assets/images/10_1.jpg)
 
 1. Input your shipping address
-![10_2.jpg](/api/workshops/sbe-workshop-2018/content/assets/images/10_2.jpg)
-
+	
+	![10_2.jpg](/api/workshops/sbe-workshop-2018/content/assets/images/10_2.jpg)
 
 ### 10.2 Deploying to a physical Snowball Edge 
 

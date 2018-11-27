@@ -12,13 +12,13 @@ We are now creating an EC2 instance and installing the necessary software on tha
 
 1. Select **Launch Instance**.
 
-  ![11_1](/api/workshops/sbe-workshop-2018/content/assets/images/11_1.png)
+	![11_1](/api/workshops/sbe-workshop-2018/content/assets/images/11_1.png)
 
 1. **Select** to launch `Ubuntu Server 16.04 LTS (HVM), SSD Volume Type` from the list.
 
 	_NOTE_: if you cannot locate the `Ubuntu Server 16.04 LTS` AMI you could also select the `Ubuntu Server 18.04 LTS` version of the AMI.
 
-  ![11_2](/api/workshops/sbe-workshop-2018/content/assets/images/11_2.png)
+	![11_2](/api/workshops/sbe-workshop-2018/content/assets/images/11_2.png)
 
 1. For this workshop we are using a smaller instance type to build our Amazon Machine Image (AMI). Choose the `t3.micro` instance type and click **Configure Instance Details** 
 
@@ -66,9 +66,9 @@ If you do not want or cannot use your own computer for these steps you can also 
 
 1. On your computer make sure that the private key you downloaded has the correct permissions set.
 
-  Command: `chmod 600 ~/Downloads/SBE_Workshop.pem`
+	Command: `chmod 600 ~/Downloads/SBE_Workshop.pem`
 
-  ![12_1](/api/workshops/sbe-workshop-2018/content/assets/images/12_1.png)
+	![12_1](/api/workshops/sbe-workshop-2018/content/assets/images/12_1.png)
 
 1. Look up the connection information for your instance in the EC2 console.
 	
@@ -78,8 +78,8 @@ If you do not want or cannot use your own computer for these steps you can also 
 
 	Command: `ssh -i "~/Downloads/SBE_Workshop.pem" ubuntu@ec2-34-222-222-74.us-west-2.compute.amazonaws.com`
 
-  ![12_3](/api/workshops/sbe-workshop-2018/content/assets/images/12_3.png)
-  ![12_4](/api/workshops/sbe-workshop-2018/content/assets/images/12_4.png)
+	![12_3](/api/workshops/sbe-workshop-2018/content/assets/images/12_3.png)
+	![12_4](/api/workshops/sbe-workshop-2018/content/assets/images/12_4.png)
 
 1. Once connected to the *EC2* instance check whether there are any updates available.
 
@@ -89,7 +89,7 @@ If you do not want or cannot use your own computer for these steps you can also 
 
 	Command: `sudo apt-get upgrade -y`
 
-  ![12_5](/api/workshops/sbe-workshop-2018/content/assets/images/12_5.png)
+ 	![12_5](/api/workshops/sbe-workshop-2018/content/assets/images/12_5.png)
 
 1. Well done! You now have an up-to-date Ubuntu instance. Move on to the next module to add AWS Greengrass.
 

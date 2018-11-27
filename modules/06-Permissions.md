@@ -60,4 +60,3 @@ IAM role for AWS Greengrass device groups:
 This role grants Lambda functions running on the device the permissions they need to interact with AWS. We will pass this role to AWS Greengrass.
 
 [Learn more](https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html#gg-group)
-

@@ -66,7 +66,7 @@ Alternatively, you can use the template here [SumerianCognitoPoolCloudFormationT
 
 1. Once the assets are imported, navigate to the panel on the right and click on the AWS Configuration tab and then paste the **Cognito Identity Pool ID** copied earlier in the textfield.
 
-![](/api/workshops/sbe-workshop-2018/content/assets/images/Sumerian_Cognito_ID.png)
+	![](/api/workshops/sbe-workshop-2018/content/assets/images/Sumerian_Cognito_ID.png)
 
 
 ### 1.4 Create an S3 bucket to host the Openpose JSON content
@@ -104,10 +104,9 @@ Confirm that the upload is successful, by clicking the gestureBig folder and ver
 
 4.  Ensure that your Sumeran project is pointing to the correct S3 location it expects the openPose files
 
-Click the **Main** tab from the panel in the right side of the Sumerian console. Expand the **SendOpenPose** section and verify that the `Bucket Name`, `OpenPose Folder`, and `Project Folder` field names match your S3 bucket heirarchy.
+	Click the **Main** tab from the panel in the right side of the Sumerian console. Expand the **SendOpenPose** section and verify that the `Bucket Name`, `OpenPose Folder`, and `Project Folder` field names match your S3 bucket heirarchy.
 
-![](/api/workshops/sbe-workshop-2018/content/assets/images/Sumerian_Main_SendOpenPose.png)
-![](../images/Sumerian_Main_SendOpenPose.png)
+	![](/api/workshops/sbe-workshop-2018/content/assets/images/Sumerian_Main_SendOpenPose.png)
 
 ### 1.5 Connecting to the shared folder
 
