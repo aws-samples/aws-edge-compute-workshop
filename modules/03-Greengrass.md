@@ -404,6 +404,8 @@ Before we install *Greengrass* we need to create the necessary certificates to b
 	
 1. Scroll down the page and download the correct Greengrass binary for your system, in our case this should be `x86_64  Ubuntu 14.04 - 16.04  Linux` select the **Download** link next to it.
 
+	_NOTE_: make sure you have downloaded _***both***_ the resources and binary tarballs! If you forget to donwload the resources tarbal which includes the certificates and the configuration for *Greengrass* you will have to recreate your *Greengrass* group.
+
 	![14_8](/api/workshops/sbe-workshop-2018/content/assets/images/14_8.png)
 	
 1. Confirm that the Greengrass Group was successfully created.
