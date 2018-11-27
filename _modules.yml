@@ -1,3 +1,5 @@
+config:
+    renderer: markdown
 modules:
   modules_01-Getting-Started:
     name: Getting Started
